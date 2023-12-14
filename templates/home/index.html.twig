@@ -1,0 +1,131 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+<div>
+    <div class="image_01">
+        <img src="{{ asset('imgs/image_01.png') }}" alt="">
+    </div>
+    <div class="documentation" id="ancre1">
+        <div class="doc_content1">
+            <div class="img01">
+                <img src="{{ asset('imgs/image_02.png') }}" alt="">
+            </div>
+            <div class="paragraph1">
+                <p>Vous désirer <span>vous restaurer </span> ou seulement passer un bon moment. <span>Le café 89 </span> est l'endroit qu'il vous faut sur <span>le campus</span>, venez nous rejoindre et passer commande sur notre <span>application</span></p>
+            </div>
+        </div>
+        <div class="doc_content2">
+            <div class="paragraph2">
+                <p>Passez commande sur notre <span>application </span> de n'importe où et venez chercher vos <span>produits </span>à l'heure que vous voulez. Nous organisons de nombreux <span>évènements </span>qui vous seront notifié en temps réel. <span>Plus vous commander </span>et plus vous bénéficiez de <span>points fidélité</span>.</p>
+            </div>
+            <div class="img02">
+                <img src="{{ asset('imgs/image_03.png') }}" alt="">
+            </div>
+        </div>
+        <div class="opinion" id="ancre2">
+            <div class="graph">
+            <canvas
+                data-te-chart="pie"
+                data-te-dataset-label="Opinion"
+                data-te-labels="['Intéressé(e) par l\'application', 'Pas inéressé(e) par l\'application' , 'Ne se prononce pas']"
+                data-te-dataset-data="[85, 5, 10]"
+                data-te-dataset-background-color="['#00a4a6', 'red', '#092b47']">
+            </canvas>
+            </div>
+            <div class="paragraph3">
+                <p>Une <span>enquête </span>à grande échelle sur tout le campus nous à permis d'identifier les potentiels consommateurs de notre application de restauration. Nous avons récolter <span>95% </span>d'avis favorables à l'arrivée du <span>Café 89 </span>et de son <span>application</span></p>
+            </div>
+        </div>
+        <div class="accordion">
+            <!-- TW Elements is free under AGPL, with commercial license required for specific uses. See more details: https://tw-elements.com/license/ and contact us for queries at tailwind@mdbootstrap.com --> 
+                <div id="accordionExample">
+                    <div
+                        class="rounded-t-lg border border-neutral-200 bg-white dark:border-neutral-600 dark:bg-white">
+                        <h2 class="mb-0" id="headingOne">
+                        <button
+                            class="group relative flex w-full items-center rounded-t-[15px] border-0 bg-white px-5 py-4 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-white dark:text-cyan [&:not([data-te-collapse-collapsed])]:bg-white [&:not([data-te-collapse-collapsed])]:text-primary [&:not([data-te-collapse-collapsed])]:[box-shadow:inset_0_-1px_0_rgba(229,231,235)] dark:[&:not([data-te-collapse-collapsed])]:bg-white dark:[&:not([data-te-collapse-collapsed])]:text-primary-400 dark:[&:not([data-te-collapse-collapsed])]:[box-shadow:inset_0_-1px_0_rgba(75,85,99)]"
+                            type="button"
+                            data-te-collapse-init
+                            data-te-collapse-collapsed
+                            data-te-target="#collapseOne"
+                            aria-expanded="false"
+                            aria-controls="collapseOne">
+                            Voir les avis laissés lors de l'enquête
+                            <span
+                            class="ml-auto h-5 w-5 shrink-0 rotate-[-180deg] fill-[#336dec] transition-transform duration-200 ease-in-out group-[[data-te-collapse-collapsed]]:rotate-0 group-[[data-te-collapse-collapsed]]:fill-[#212529] motion-reduce:transition-none dark:fill-blue-300 dark:group-[[data-te-collapse-collapsed]]:fill-white">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.5"
+                                stroke="currentColor"
+                                class="h-6 w-6">
+                                <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                            </svg>
+                            </span>
+                        </button>
+                        </h2>
+                        <div
+                        id="collapseOne"
+                        class="!visible hidden"
+                        data-te-collapse-item
+                        aria-labelledby="headingOne"
+                        data-te-parent="#accordionExample">
+                        <div class="px-5 py-4">
+                            <div class="commentaire">
+                                <p>De Laura</p>
+                                <p>Je suis enthousiaste de voir le café 89 arriver sur notre campus, j’ai hâte de pouvoir retrouver mes amis et travailler ensemble autour d’un bon dessert.</p>
+                            </div>
+                            <div class="commentaire">
+                                <p>De Cedric</p>
+                                <p>Le midi, à moins d'avoir notre repas avec nous, il est difficile de trouver de quoi manger, à moins d’aller en ville ce qui nous fait perdre un temps précieux, avec l’arrivée du café 89, je pourrais enfin commander mon repas du midi et avoir la certitude d’avoir du temps le midi.</p>
+                            </div>
+                            <div class="commentaire">
+                                <p>De Christophe</p>
+                                <p>Nous avons souvent des projets en commun avec d’autres élèves et le café 89 peut nous apporter un lieu pour échanger nos idées et travailler tout en buvant un bon café.</p>
+                            </div>
+                            <div class="commentaire">
+                                <p>De Jennifer</p>
+                                <p>J’aime le fait de pouvoir commander sans attendre dans une file, avec l’application, je pourrais commander mes produits d’où je veux sans pression.</p>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <div class="questions" id="ancre3">
+        <h1>Des questions ?</h1>
+    </div>
+    <div class="questionnaire">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <div class="submit_button">
+            <button class="btn_questionnaire">{{ button_label|default('Envoyer') }}</button>
+        </div>
+        {{ form_end(form) }}
+    </div>
+    <div class="download_message" id="ancre4">
+        <h1>Télécharger l'appli</h1>
+    </div>
+    <div class="download">
+        <div class="a">
+            <img src="{{ asset('imgs/iphone.png') }}" alt="">
+        </div>
+        <div class="b">
+            <a href="https://www.apple.com/fr/app-store/"><img src="{{ asset('imgs/ios.png') }}" alt=""></a>
+        </div>
+        <div class="c">
+            <a href="https://play.google.com/store/apps?hl=fr&gl=US&pli=1"><img src="{{ asset('imgs/playstore.png') }}" alt=""></a>
+        </div>
+        <div class="d">
+            <img src="{{ asset('imgs/qr_code.png') }}" alt="">
+        </div>
+    </div>
+</div>
+{% endblock %}

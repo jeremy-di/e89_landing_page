@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Message index{% endblock %}
+
+{% block body %}
+    <h1 class="text-2xl text-center mt-2 mb-5">Liste des messages</h1>
+
+    {# table #}
+    <!-- TW Elements is free under AGPL, with commercial license required for specific uses. See more details: https://tw-elements.com/license/ and contact us for queries at tailwind@mdbootstrap.com --> 
+    <div class="flex flex-col">
+    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+        <div class="overflow-hidden">
+            <table class="min-w-full text-left text-sm font-light">
+            <thead class="border-b font-medium dark:border-neutral-500">
+                <tr>
+                <th scope="col" class="px-6 py-4">Objet</th>
+                <th scope="col" class="px-6 py-4">email</th>
+                <th scope="col" class="px-6 py-4">Contenu du message</th>
+                <th scope="col" class="px-6 py-4">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for message in messages %}
+                <tr class="border-b dark:border-neutral-500">
+                <td class="whitespace-nowrap px-6 py-4 font-medium">{{ message.object }}</td>
+                <td class="whitespace-nowrap px-6 py-4">{{ message.email }}</td>
+                <td class="whitespace-nowrap px-6 py-4">{{ message.content }}</td>
+                <td class="whitespace-nowrap px-6 py-4">
+                    {{ include('message/_delete_form.html.twig') }}
+                </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+    </div>
+    {# table #}
+    <div class="mt-5 mb-5 text-center">
+        <a href="{{ path('app_home') }}">
+            <button
+            type="button"
+            class="m-auto inline-block rounded bg-info px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#54b4d3] transition duration-150 ease-in-out hover:bg-info-600 hover:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] focus:bg-info-600 focus:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] focus:outline-none focus:ring-0 active:bg-info-700 active:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(84,180,211,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.2),0_4px_18px_0_rgba(84,180,211,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.2),0_4px_18px_0_rgba(84,180,211,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.2),0_4px_18px_0_rgba(84,180,211,0.1)]">
+            Retour
+            </button>
+        </a>
+    </div>
+{% endblock %}

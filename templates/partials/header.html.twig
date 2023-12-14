@@ -1,0 +1,34 @@
+{# <header>
+    <div>
+        <img width="150px" src="{{ asset('imgs/logo_89.png') }}" alt="">
+    </div>
+    <div>
+        <h1 class="header_title">Bienvenue au <span class="cafe_title">Café 89</span></h1>
+    </div>
+</header> #}
+
+<header>
+        <div class="basculer">
+                <i class="fa-solid fa-bars ouvrir"></i>
+                <i class="fa-solid fa-xmark fermer"></i>
+        </div>
+        <div class="nav">
+            <div class="title_img">
+                <img src="{{ asset('imgs/logo_89.png') }}" alt="">
+            </div>
+            <div class="title_h1">
+                <h1>Bienvenue au <span>Café 89</span></h1>
+            </div>
+            
+            <ul class="menu">
+                <li><a href="#ancre1">Documentation</a></li>
+                <li><a href="#ancre2">Enquête</a></li>
+                <li><a href="#ancre3">Des questions ?</a></li>
+                <li><a href="#ancre4">Téléchargement</a></li>
+                {% if app.user %}
+                <li><a href="{{ path('app_message_index') }}">Voir la liste des messages</a></li>
+                <li><a href="{{ path('app_logout') }}"><button class="btns btn-secondary">Deconnexion</button></a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </header>
